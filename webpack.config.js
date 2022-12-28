@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./src/index.js",
   output: {
-    filename: "main.js",
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, "build"),
   },
   module: {
@@ -37,5 +37,10 @@ module.exports = {
   },
   resolve: {
     extensions: ["*", ".js", ".jsx"],
-  }
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
+  },
 };
