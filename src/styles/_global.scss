@@ -1,0 +1,25 @@
+@import "variables";
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: $base-font-size;
+}
+
+body {
+    font-family: $Roboto;
+    background-color: $white;
+}
+
+body, h1, h2, p {
+    margin: 0;
+}
+
+
+@media (min-width: 768px) {
+    html {
+      font-size: 18px;
+    }
+}

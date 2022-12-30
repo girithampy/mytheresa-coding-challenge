@@ -1,15 +1,18 @@
 import Header from "./components/Header";
-import image from './images/user_placeholder.png'
+// Routes
+import Routes from "./routes";
 
 import "./App.scss";
 
 const App = () => {
     return (
-        <div>
+        <section className="page-wrapper">
             <Header />
-            <img src={image}/>
-            <h1 className="title">Hello from React! 123</h1>
-        </div>
+            <main className="main-container">
+                <Routes />
+            </main>
+        </section>
+
     );
 }
 export default App;

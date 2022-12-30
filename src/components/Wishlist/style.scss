@@ -1,0 +1,9 @@
+@import "../../styles/functions";
+
+.wishlist {
+    &__icon-wrap {
+        &__icon {
+            width: pxToRem(22);
+        }
+    }
+}

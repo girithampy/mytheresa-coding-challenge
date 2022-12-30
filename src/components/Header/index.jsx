@@ -1,5 +1,14 @@
+// Components
+import Wishlist from "../Wishlist";
+// Styles
 import "./style.scss";
-
-const Header = () => <h1 className="header-title">Header</h1>;
+const Header = () => {
+    return (
+        <header className="header">
+            <h1 className="header__title">Header</h1>
+            <Wishlist />
+        </header>
+    );
+}
 
 export default Header;

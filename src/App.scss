@@ -1,3 +1,26 @@
-.title {
-    color: red;
+@import "styles/functions";
+@import "styles/global";
+
+.page-wrapper {
+    height: 100vh;
+    .main-container {
+        padding: pxToRem(15) pxToRem(20);
+    }
 }
+
+
+// @media (min-width: 768px) {
+//     .page-wrapper {
+//         .main-container {
+//             padding: pxToRem(15) pxToRem(30);
+//         }
+//     }
+// }
+
+// @media (min-width: 992px) {
+//     .page-wrapper {
+//         .main-container {
+//             padding: pxToRem(15) pxToRem(60);
+//         }
+//     }
+// }
