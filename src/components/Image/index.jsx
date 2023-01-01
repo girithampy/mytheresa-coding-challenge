@@ -1,3 +1,4 @@
+import { memo } from "react";
 // Hooks
 import useImage from "../../hooks/useImage";
 // Styles
@@ -12,4 +13,4 @@ const Image = ({ imageUrl, containerClassName = '' }) => {
     );
 }
 
-export default Image;
+export default memo(Image);

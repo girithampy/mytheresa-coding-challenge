@@ -1,0 +1,110 @@
+@import "../../styles/functions";
+@import "../../styles/variables";
+
+.details-page {
+    $this: &;
+    &__content-container {
+        display: flex;
+        flex-direction: column;
+        #{$this}__img-container {
+            display: flex;
+        }   
+        #{$this}__info-container {
+            padding-top: pxToRem(15);
+            #{$this}__add-wishlist-button {
+                width: 100%;
+                text-transform: uppercase;
+                font-size: pxToRem(12);
+                font-weight: 700;
+                color: $black;
+                border: none;
+                border-radius: 5px;
+                background-color: $yellow;
+                padding: pxToRem(10);
+                margin-bottom: pxToRem(10);
+            }
+            #{$this}__title-section {
+                display: flex;
+                margin-bottom: pxToRem(10);
+                #{$this}__poster-image{
+                    display: flex;
+                    height: 100%;
+                    width: pxToRem(100);
+                }
+                #{$this}__poster-title{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    flex: 1;
+                    padding-left: pxToRem(15);
+
+                    #{$this}__title {
+                        font-size: pxToRem(17);
+                    }
+
+                    #{$this}__sub-text {
+                        font-size: pxToRem(11);
+                        &::after {
+                            margin: 0 pxToRem(3);
+                            color: #dddddd;
+                            content: ' | ';
+                        }
+                        &:last-child::after{
+                            display: none;
+                        }
+                    }
+                    #{$this}__avg-text{
+                        font-size: pxToRem(12);
+                        margin-right: pxToRem(5);
+                    }
+                    #{$this}__avg-image {
+                        vertical-align: middle;
+                    }
+                }
+            }
+            #{$this}__description {
+                font-size: pxToRem(13);
+            }
+        }   
+        #{$this}__addition-info-container {
+            width: 100%;
+            padding: pxToRem(15) 0;
+            #{$this}__additional-info-text {
+                font-size: pxToRem(13);
+                font-weight: 700;
+                margin-right: pxToRem(10);
+            }
+            #{$this}__additional-info {
+                font-size: pxToRem(13);
+            }
+            
+        }
+
+        #{$this}__spacing {
+            margin-bottom: pxToRem(6);
+        }
+    }
+}
+
+
+@media (min-width: 768px) {
+    .details-page {
+        $this: &;
+        &__content-container {
+            flex-direction: row;
+            #{$this}__img-container {
+                width: 60%;
+            }   
+            #{$this}__info-container {
+                width: 40%;
+                padding: 0 0 0 pxToRem(15);
+            }   
+        }
+    }
+}
+
+// @media (min-width: 992px) {
+//     .movie-list-item-container {
+//         width: 80%;
+//     }
+// }

@@ -19,7 +19,7 @@ export const fetchTop3Movies = createAsyncThunk(
 )
 
 
-export const counterSlice = createSlice({
+export const moviesSlice = createSlice({
     name: 'movies',
     initialState,
     reducers: {},
@@ -34,6 +34,6 @@ export const counterSlice = createSlice({
     }
 });
 
-export default counterSlice.reducer
+export default moviesSlice.reducer
 
 

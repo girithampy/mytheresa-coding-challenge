@@ -1,10 +1,19 @@
 @import "styles/functions";
 @import "styles/global";
+@import "styles/mixins";
 
 .page-wrapper {
     height: 100vh;
     .main-container {
+        position: relative;
+        overflow: hidden;
+        height: calc(100% - pxToRem(70));
         padding: pxToRem(15) pxToRem(20);
+        .route-container {
+            @extend .hide-scroll;
+            height: 100%;
+            overflow: scroll;
+        }
     }
 }
 

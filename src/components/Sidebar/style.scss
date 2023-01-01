@@ -1,0 +1,49 @@
+@import "../../styles/functions";
+@import "../../styles/variables";
+
+.sidebar {
+    background-color: $sidebar-background-color;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 0;
+    opacity: 0;
+    box-shadow: 0 3px 5px $box-shadow;
+    overflow-x: hidden;
+    transition: 0.3s;
+    &__inner-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: pxToRem(15);
+        &__empty-container {
+            &__text {
+                font-size: pxToRem(15);
+                color: #666;
+            }
+        }
+    }
+
+    &.open {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        &.open {
+            width: 50%;
+        }
+    }
+}
+
+// @media (min-width: 992px) {
+//     .sidebar {
+//         &.open {
+//             width: 30%;
+//         }
+//     }
+// }

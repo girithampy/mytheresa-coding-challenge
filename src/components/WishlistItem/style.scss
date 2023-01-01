@@ -1,0 +1,52 @@
+@import "../../styles/functions";
+@import "../../styles/variables";
+
+.wishlist-item {
+    border-bottom: 1px solid $yellow;
+    margin-bottom: pxToRem(10);
+    padding-bottom: pxToRem(10);
+    &__inner-container {
+        display: flex;
+        overflow: hidden;
+        &__image {
+            display: flex;
+            height: 100%;
+            width: pxToRem(100);
+        }
+        &__content {
+            flex: 1;
+            padding-left: pxToRem(15);
+            &__title {
+                font-size: pxToRem(17);
+            }
+            &__sub-text {
+                font-size: pxToRem(11);
+                &::after {
+                    margin: 0 pxToRem(3);
+                    color: #dddddd;
+                    content: ' | ';
+                }
+                &:last-child::after{
+                    display: none;
+                }
+            }
+            &__avg-text{
+                font-size: pxToRem(13);
+                margin-right: pxToRem(5);
+            }
+            &__avg-image {
+                vertical-align: middle;
+            }
+            &__overview-text {
+                font-size: pxToRem(13);
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            &__details {
+                margin-bottom: pxToRem(6);
+            }
+        }
+    }
+}

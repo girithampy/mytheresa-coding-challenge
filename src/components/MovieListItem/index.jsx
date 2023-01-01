@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 // Components
 import Image from "../Image";
@@ -22,4 +23,4 @@ const MovieListItem = ({ movie }) => {
     );
 }
 
-export default MovieListItem;
+export default memo(MovieListItem);
