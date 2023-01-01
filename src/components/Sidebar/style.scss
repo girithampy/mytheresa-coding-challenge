@@ -2,6 +2,7 @@
 @import "../../styles/variables";
 
 .sidebar {
+    $this: &;
     background-color: $sidebar-background-color;
     position: absolute;
     z-index: 5;
@@ -18,15 +19,15 @@
         flex-direction: column;
         align-items: center;
         padding: pxToRem(15);
-        &__empty-container {
-            &__text {
+        #{$this}__empty-container {
+            #{$this}__text {
                 font-size: pxToRem(15);
                 color: #666;
             }
         }
     }
 
-    &.open {
+    &.is-open {
         width: 100%;
         opacity: 1;
     }
@@ -34,7 +35,7 @@
 
 @media (min-width: 768px) {
     .sidebar {
-        &.open {
+        &.is-open {
             width: 50%;
         }
     }

@@ -1,7 +1,8 @@
 @import "../../styles/functions";
 @import "../../styles/variables";
 
-.movie-list-item-container {
+.movie-list-item {
+    $this: &;
     position: relative;
     width: 100%;
     background-color: #ffffff;
@@ -9,26 +10,24 @@
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 3px 5px $box-shadow;
-    .info-section {
+    &__content {
         position: absolute;
-        // top: 0;
         bottom: 0;
         width: 100%;
-        // height: 100%;
         z-index: 2;
         background-color: rgba(0,0,0,0.4);
         display: flex;
         align-items: flex-end;
         color: #ffffff;
         padding: pxToRem(10);
-        .text-wrap {
-            .title {
+        #{$this}__text-wrap {
+            #{$this}__title {
                 font-style: normal;
                 font-weight: 400;
                 font-size: pxToRem(20);
                 line-height: pxToRem(24);
             }
-            .sub-text {
+            #{$this}__sub-text {
                 font-style: normal;
                 font-weight: 400;
                 font-size: pxToRem(12);

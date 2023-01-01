@@ -8,7 +8,7 @@
 
 @media (min-width: 768px) {
     .home-page {
-        .list-container {
+        &__list-container {
             width: 90%
         }
     }
@@ -16,7 +16,7 @@
 
 @media (min-width: 992px) {
     .home-page {
-        .list-container {
+        &__list-container {
             width: 80%
         }
     }

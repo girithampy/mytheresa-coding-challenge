@@ -2,6 +2,7 @@
 @import "../../styles/functions";
 
 .wishlist {
+    $this: &;
     &__button {
         display: flex;
         justify-content: center;
@@ -15,7 +16,7 @@
         background-color: $yellow;
         height: pxToRem(25);
         padding: 0 pxToRem(10);
-        &__img {
+        #{$this}__img {
             width: pxToRem(15);
             height: auto;
             margin-right: pxToRem(8);

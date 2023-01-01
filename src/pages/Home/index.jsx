@@ -22,7 +22,7 @@ const Home = () => {
 
     return (
         <section className='home-page'>
-            <section className='list-container'>
+            <section className='home-page__list-container'>
                 {Children.toArray(movies.list.map(m => <MovieListItem movie={m}/>))}
             </section>
         </section>

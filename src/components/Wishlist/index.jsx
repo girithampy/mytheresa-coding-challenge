@@ -14,7 +14,7 @@ const Wishlist = () => {
 
     return (
         <section className="wishlist">
-            <button className="wishlist__button" onClick={() => dispatch(toggleSidebar())}><img className="wishlist__button__img" src={BookmarkPlusFill}/>{`My Wishlist(${myWishlist.length})`}</button>
+            <button className="wishlist__button" onClick={() => dispatch(toggleSidebar())}><img className="wishlist__img" src={BookmarkPlusFill}/>{`My Wishlist(${myWishlist.length})`}</button>
         </section>
     );
 }

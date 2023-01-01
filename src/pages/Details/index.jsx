@@ -1,15 +1,13 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 // Components
-// import Image from "../../components/Image";
-// Hooks
-import useImage from "../../hooks/useImage";
+import Image from "../../components/Image";
 // Store
 import { useStoreDispatch, useStoreSelector } from "../../store/hooks";
 // Actions
 import { addToWishlist } from "../../store/slices/appSlice";
 import { fetchMovieDetails } from "../../store/slices/movieDetailsSlice";
-// Images
+// SVG
 import StarFill from "../../images/star-fill.svg"
 // Styles
 import "./style.scss"
@@ -35,30 +33,13 @@ const Details = () => {
         return <section className="details-page"></section>
     }
 
-    // const DescriptionSection = ({ title, value}) => (
-    //     <article className="details-page__image-desc__description__description-wrap">
-    //         <h2 className="details-page__image-desc__description__description-wrap__title">{title}</h2>
-    //         <label className="details-page__image-desc__description__description-wrap__info">{value}</label>
-    //     </article>
-    // )
-
-    const Image = ({ imageUrl }) => {
-        const image = useImage(imageUrl);
-        return (
-            <img className="image-container__image" src={image}/>
-        )
-    }
     return (
         <section className="details-page">
             <section className="details-page__content-container">
-                <section className="details-page__img-container">
-                    <Image imageUrl={movie.data?.backdrop_path} />
-                </section>
+                <Image imageUrl={movie.data?.backdrop_path} containerClassName="details-page__img-container"/>
                 <section className="details-page__info-container">
                     <section className="details-page__title-section">
-                        <section className="details-page__poster-image">
-                            <Image imageUrl={movie.data?.poster_path} />
-                        </section>
+                        <Image imageUrl={movie.data?.poster_path} containerClassName="details-page__poster-image" />
                         <section className="details-page__poster-title">
                             <h3 className="details-page__title">{movie.data.original_title}</h3>
                             <p className="details-page__spacing">

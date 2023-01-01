@@ -27,8 +27,6 @@
                 display: flex;
                 margin-bottom: pxToRem(10);
                 #{$this}__poster-image{
-                    display: flex;
-                    height: 100%;
                     width: pxToRem(100);
                 }
                 #{$this}__poster-title{

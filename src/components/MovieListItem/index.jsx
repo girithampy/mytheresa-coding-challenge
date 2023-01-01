@@ -2,20 +2,18 @@ import { memo } from "react";
 import { Link } from "react-router-dom";
 // Components
 import Image from "../Image";
-// Hooks
-// import useImage from "../../hooks/useImage";
-
+// Styles
 import "./style.scss";
 
 const MovieListItem = ({ movie }) => {
     return (
-        <article className="movie-list-item-container">
+        <article className="movie-list-item">
             <Link to={`/${movie.id}`}>
                 <Image imageUrl={movie.backdrop_path} />
-                <section className="info-section">
-                    <section className="text-wrap">
-                        <h1 className="title">{movie.original_title}</h1>
-                        <label className="sub-text">Released on {movie.release_date}</label>
+                <section className="movie-list-item__content">
+                    <section className="movie-list-item__text-wrap">
+                        <h1 className="movie-list-item__title">{movie.original_title}</h1>
+                        <label className="movie-list-item__sub-text">Released on {movie.release_date}</label>
                     </section>
                 </section>
             </Link>
