@@ -9,11 +9,7 @@ const initialState = {
 
 export const fetchMovieDetails = createAsyncThunk(
     'movies/details',
-    async (movieId, thunkAPI) => {
-        // console("thunkAPI.getState('loading') ",thunkAPI.getState().loading)
-        // if(!thunkAPI.getState().loading){  // Checking if loading is false, if yes making loader to true
-        //     thunkAPI.dispatch(toggleLoader())
-        // }
+    async (movieId) => {
         const response = await getTopMoviesDetails(movieId);
         return response.data;
     }

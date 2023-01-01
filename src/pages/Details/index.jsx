@@ -39,10 +39,6 @@ const Details = () => {
         dispatch(fetchMovieDetails(movieId));
     }, [movieId])
 
-    useEffect(() => {
-        console.log("movie ", movie);
-    }, [movie]);
-
     if (movie.loading) {
         return <section className="details-page"></section>
     }

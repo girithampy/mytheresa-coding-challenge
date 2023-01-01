@@ -1,22 +1,26 @@
-// Components
-import Header from "./components/Header";
-import Sidebar from "./components/Sidebar";
-// Routes
-import Routes from "./routes";
+import { lazy, Suspense } from 'react';
 // Styles
 import "./App.scss";
+// Lazy loaded Components
+const Header = lazy(() => import("./components/Header"));
+const Sidebar = lazy(() => import("./components/Sidebar"));
+// Lazy loaded Routes
+const Routes = lazy(() => import("./routes"));
 
 const App = () => {
     return (
-        <section className="page-wrapper">
-            <Header />
-            <main className="main-container">
-                <Sidebar />
-                <section className="route-container">
-                    <Routes />
-                </section>
-            </main>
-        </section>
+        <Suspense fallback={<section />/** Loader component comes here*/}>
+            <section className="page-wrapper">
+                <Header />
+                <main className="main-container">
+                    <Sidebar />
+                    <section className="route-container">
+                        <Routes />
+                    </section>
+                </main>
+            </section>
+        </Suspense>
+
 
     );
 }

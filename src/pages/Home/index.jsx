@@ -16,10 +16,6 @@ const Home = () => {
         dispatch(fetchTop3Movies())
     },[]);
 
-    useEffect(() => {
-        console.log("movies ",movies);
-    },[movies]);
-
     return (
         <section className='home-page'>
             <section className='home-page__list-container'>
