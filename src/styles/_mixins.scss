@@ -5,3 +5,10 @@
         display: none;  /* Safari and Chrome */
     }
 }
+
+.hover-effect {
+    cursor: pointer;
+    &:hover {
+        opacity: 0.8;
+    }
+}

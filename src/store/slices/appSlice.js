@@ -29,7 +29,7 @@ export const appSlice = createSlice({
         },
         removeFromWishList : (state, action) => {
             const currentMyWishlist = [...state.myWishlist];
-            const _wishlistIndex = currentMyWishlist.findIndex(w => w.id === action.payload.id);
+            const _wishlistIndex = currentMyWishlist.findIndex(w => w.id === action.payload);
             if(_wishlistIndex > -1) {
                 currentMyWishlist.splice(_wishlistIndex,1);
             }

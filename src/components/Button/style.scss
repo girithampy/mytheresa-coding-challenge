@@ -1,0 +1,24 @@
+@import "../../styles/variables";
+@import "../../styles/functions";
+@import "../../styles/mixins";
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: pxToRem(10);
+    font-weight: 700;
+    color: $black;
+    border: none;
+    border-radius: 5px;
+    background-color: $yellow;
+    height: pxToRem(25);
+    padding: 0 pxToRem(10);
+    &__pre-icon {
+        width: pxToRem(15);
+        height: auto;
+        margin-right: pxToRem(8);
+    }
+    @extend .hover-effect;
+}

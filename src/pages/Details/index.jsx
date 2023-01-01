@@ -1,14 +1,17 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useParams } from "react-router-dom";
 // Components
 import Image from "../../components/Image";
+import Button from "../../components/Button";
 // Store
 import { useStoreDispatch, useStoreSelector } from "../../store/hooks";
 // Actions
-import { addToWishlist } from "../../store/slices/appSlice";
+import { addToWishlist, removeFromWishList } from "../../store/slices/appSlice";
 import { fetchMovieDetails } from "../../store/slices/movieDetailsSlice";
 // SVG
 import StarFill from "../../images/star-fill.svg"
+import BookmarkPlusFill from "../../images/bookmark-plus-fill.svg"
+import BookmarkCheckFill from "../../images/bookmark-check-fill.svg"
 // Styles
 import "./style.scss"
 
@@ -16,9 +19,20 @@ const Details = () => {
     let { movieId } = useParams();
     const dispatch = useStoreDispatch();
     const movie = useStoreSelector(state => state.movieDetails);
+    const { myWishlist } = useStoreSelector(state => state.app);
+
+    const isInWishlist = useMemo(() => {
+        if(!movie.data || myWishlist.length === 0) {
+            return false;
+        }
+        return myWishlist.some(w => w.id === movie.data.id)
+    },[movie, myWishlist]);
 
     const addToMyWishlist = () => {
         dispatch(addToWishlist(movie.data))
+    };
+    const removeFromMyWishlist = () => {
+        dispatch(removeFromWishList(movie.data.id))
     };
 
     useEffect(() => {
@@ -51,7 +65,11 @@ const Details = () => {
                                 <span className="details-page__avg-text">{Number(movie.data.vote_average).toFixed(1)}</span>
                                 <img className="details-page__avg-image" src={StarFill}/>
                             </p>
-                            <button className="details-page__add-wishlist-button" onClick={addToMyWishlist}>add to wishlist</button>
+                            {isInWishlist ? 
+                                <Button preIcon={BookmarkCheckFill} onClick={removeFromMyWishlist} text="added to wishlist"/> : 
+                                <Button preIcon={BookmarkPlusFill} onClick={addToMyWishlist} text="add to wishlist"/>
+                            }
+                            {/* <button className="details-page__add-wishlist-button" onClick={addToMyWishlist}>{isInWishlist ? "added to wishlist" : "add to wishlist"}</button> */}
                         </section>
                     </section>
                     <p className="details-page__description">{movie.data.overview}</p>
