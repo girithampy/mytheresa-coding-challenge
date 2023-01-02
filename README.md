@@ -1,1 +1,1 @@
-# react-ssr-webpack
+# mytheresa-coding-challenge

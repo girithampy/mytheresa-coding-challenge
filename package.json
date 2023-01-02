@@ -1,5 +1,5 @@
 {
-  "name": "react-ssr-webpack",
+  "name": "mytheresa-coding-challenge",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/girithampy/react-ssr-webpack.git"
+    "url": "git+https://github.com/girithampy/mytheresa-coding-challenge.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/girithampy/react-ssr-webpack/issues"
+    "url": "https://github.com/girithampy/mytheresa-coding-challenge/issues"
   },
-  "homepage": "https://github.com/girithampy/react-ssr-webpack#readme",
+  "homepage": "https://github.com/girithampy/mytheresa-coding-challenge#readme",
   "devDependencies": {
     "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
