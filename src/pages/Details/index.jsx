@@ -49,7 +49,6 @@ const Details = () => {
     }, [searchParams.get('designVariant')]);
 
     const wishlistButton = useMemo(() => {
-        console.log("getDesignVariant ",getDesignVariant)
         const props = {
             Icon : isInWishlist ? BookmarkCheckFill : BookmarkPlusFill,
             onClick : isInWishlist ? removeFromMyWishlist : addToMyWishlist
