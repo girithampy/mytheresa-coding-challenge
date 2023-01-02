@@ -1,0 +1,18 @@
+@import "../../styles/functions";
+@import "../../styles/mixins";
+
+.page-layout {
+    $this: &;
+    height: 100vh;
+    &__main-container {
+        position: relative;
+        overflow: hidden;
+        height: calc(100% - pxToRem(70));
+        padding: pxToRem(15) pxToRem(20);
+        #{$this}__content-container {
+            @extend .hide-scroll;
+            height: 100%;
+            overflow: scroll;
+        }
+    }
+}

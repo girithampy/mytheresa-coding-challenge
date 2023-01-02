@@ -43,7 +43,7 @@
                 width: 100%;
                 text-transform: uppercase;
                 font-size: pxToRem(12);
-                font-weight: 700;
+                font-weight: $bold;
                 color: $black;
                 border: none;
                 border-radius: 5px;
@@ -97,7 +97,7 @@
             padding: pxToRem(15) 0;
             #{$this}__additional-info-text {
                 font-size: pxToRem(13);
-                font-weight: 700;
+                font-weight: $bold;
                 margin-right: pxToRem(10);
             }
             #{$this}__additional-info {

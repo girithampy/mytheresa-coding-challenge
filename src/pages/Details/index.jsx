@@ -71,7 +71,7 @@ const Details = () => {
     }
 
     return (
-        <section className="details-page">
+        <section className={`details-page ${`is-${getDesignVariant}-design`}`}>
             <section className="details-page__content-container">
                 <section className="details-page__img-container">
                     {wishlistButton}

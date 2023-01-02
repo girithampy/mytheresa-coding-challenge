@@ -24,13 +24,13 @@
         #{$this}__text-wrap {
             #{$this}__title {
                 font-style: normal;
-                font-weight: 400;
+                font-weight: $regular;
                 font-size: pxToRem(20);
                 line-height: pxToRem(24);
             }
             #{$this}__sub-text {
                 font-style: normal;
-                font-weight: 400;
+                font-weight: $regular;
                 font-size: pxToRem(12);
                 line-height: pxToRem(18);
             }

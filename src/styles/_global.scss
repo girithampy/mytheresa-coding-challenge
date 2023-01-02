@@ -1,4 +1,5 @@
 @import "variables";
+@import "functions";
 
 * {
     box-sizing: border-box;
@@ -10,14 +11,24 @@ html {
 }
 
 body {
-    font-family: $Roboto;
+    font-family: $roboto;
     background-color: $background-color;
+    line-height: pxToRem(20);
 }
 
 body, h1, h2, h3, p {
     margin: 0;
 }
 
+.is-v1-design {
+    font-family: $roboto;
+}
+.is-v2-design {
+    font-family: $poppins;
+}
+.is-v3-design {
+    font-family: $openSans;
+}
 
 @media (min-width: 768px) {
     html {
