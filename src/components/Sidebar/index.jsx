@@ -9,7 +9,7 @@ import "./style.scss";
 const Sidebar = () => {
     const { openSidebar, myWishlist } = useStoreSelector(state => state.app);
     return (
-        <aside className={`sidebar ${openSidebar && 'is-open'}`}>
+        <aside className={`sidebar ${openSidebar && 'is-open'}`} data-testid="sidebar">
             <section className="sidebar__inner-container">
                 {myWishlist.length === 0 && 
                     <section className="sidebar__empty-container">

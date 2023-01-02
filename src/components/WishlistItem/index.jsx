@@ -10,7 +10,7 @@ import "./style.scss";
 const WishlistItem = ({ movie }) => {
 
     return (
-        <article className="wishlist-item">
+        <article className="wishlist-item" data-testid="wishlist-item">
             <section className="wishlist-item__inner-container">
                 <Image imageUrl={movie.poster_path} containerClassName="wishlist-item__image"/>
                 <section className="wishlist-item__content">

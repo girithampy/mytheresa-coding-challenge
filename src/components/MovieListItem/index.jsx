@@ -10,8 +10,8 @@ import { DESIGN_VARIANTS } from "../../utils/constants"
 
 const MovieListItem = ({ movie, designVariant }) => {
     return (
-        <article className="movie-list-item">
-            <Link to={`/${movie.id}?designVariant=${designVariant}`}>
+        <article className="movie-list-item" data-testid="movie-list-item">
+            <Link role={"a"} to={`/${movie.id}?designVariant=${designVariant}`}>
                 <Image imageUrl={movie.backdrop_path} />
                 <section className="movie-list-item__content">
                     <section className="movie-list-item__text-wrap">

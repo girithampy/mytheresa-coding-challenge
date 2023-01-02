@@ -8,7 +8,7 @@ import "./style.scss";
 const Image = ({ imageUrl, containerClassName = '' }) => {
     const image = useImage(imageUrl);
     return (
-        <section className={`image-container ${containerClassName}`}>
+        <section data-testid="image" className={`image-container ${containerClassName}`}>
             <img className="image-container__image" src={image}/>
         </section>
     );

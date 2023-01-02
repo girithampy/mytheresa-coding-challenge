@@ -16,7 +16,7 @@ const Header = () => {
     const myWishlist = useStoreSelector(state => state.app.myWishlist)
 
     return (
-        <header className="header">
+        <header className="header" data-testid="header">
             <Link to={`/`}>
                 <img className="header__logo" src={Logo}/>
             </Link>
