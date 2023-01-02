@@ -1,13 +1,41 @@
 @import "../../styles/functions";
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .details-page {
     $this: &;
+    height: 100%;
     &__content-container {
         display: flex;
         flex-direction: column;
         #{$this}__img-container {
-            display: flex;
+            position: relative;
+            #{$this}__wishlist-button {
+                @extend .hover-effect;
+                z-index: 2;
+                padding: pxToRem(7);
+                border-radius: 50%;
+                background-color: $yellow;
+                height: pxToRem(50);
+                width: pxToRem(50);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                #{$this}__wishlist-button-img {
+                    width: 90%;
+                }
+                &.v2 {
+                    position: absolute;
+                    top: pxToRem(5);
+                    right: pxToRem(5);
+                }
+                &.v3 {
+                    position : fixed;
+                    bottom: pxToRem(20);
+                    right: pxToRem(20);
+                }
+
+            }
         }   
         #{$this}__info-container {
             padding-top: pxToRem(15);

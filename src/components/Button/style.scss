@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-size: pxToRem(10);
     font-weight: 700;
     color: $black;

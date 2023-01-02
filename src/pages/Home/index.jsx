@@ -7,6 +7,8 @@ import { useStoreDispatch, useStoreSelector } from "../../store/hooks";
 import { fetchTop3Movies } from "../../store/slices/moviesSlice";
 // Styles
 import "./style.scss";
+// Constants
+import { DESIGN_VARIANTS  } from "../../utils/constants";
 
 const Home = () => {
     const dispatch = useStoreDispatch();
@@ -19,7 +21,7 @@ const Home = () => {
     return (
         <section className='home-page'>
             <section className='home-page__list-container'>
-                {Children.toArray(movies.list.map(m => <MovieListItem movie={m}/>))}
+                {Children.toArray(movies.list.map((m,i) => <MovieListItem movie={m} designVariant={Object.values(DESIGN_VARIANTS)[i]}/>))}
             </section>
         </section>
     )
