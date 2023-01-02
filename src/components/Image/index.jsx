@@ -1,4 +1,5 @@
 import { memo } from "react";
+import PropTypes from 'prop-types';
 // Hooks
 import useImage from "../../hooks/useImage";
 // Styles
@@ -11,6 +12,11 @@ const Image = ({ imageUrl, containerClassName = '' }) => {
             <img className="image-container__image" src={image}/>
         </section>
     );
+}
+
+Image.propTypes = {
+    imageUrl : PropTypes.string.isRequired,
+    containerClassName : PropTypes.string
 }
 
 export default memo(Image);

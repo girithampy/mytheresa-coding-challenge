@@ -1,9 +1,12 @@
 import { memo } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 // Components
 import Image from "../Image";
 // Styles
 import "./style.scss";
+// Constants
+import { DESIGN_VARIANTS } from "../../utils/constants"
 
 const MovieListItem = ({ movie, designVariant }) => {
     return (
@@ -19,6 +22,16 @@ const MovieListItem = ({ movie, designVariant }) => {
             </Link>
         </article>
     );
+}
+
+MovieListItem.propTypes = {
+    movie : PropTypes.shape({
+        id : PropTypes.number,
+        backdrop_path: PropTypes.string,
+        original_title: PropTypes.string,
+        release_date: PropTypes.string,
+    }).isRequired,
+    designVariant : PropTypes.oneOf(Object.values(DESIGN_VARIANTS))
 }
 
 export default memo(MovieListItem);

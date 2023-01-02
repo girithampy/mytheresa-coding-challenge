@@ -1,4 +1,5 @@
 import { memo } from "react";
+import PropTypes from 'prop-types';
 // Components
 import Image from "../Image";
 // SVG
@@ -29,6 +30,18 @@ const WishlistItem = ({ movie }) => {
             </section>
         </article>
     );
+}
+
+WishlistItem.propTypes = {
+    movie : PropTypes.shape({
+        id : PropTypes.number,
+        poster_path: PropTypes.string,
+        original_title: PropTypes.string,
+        release_date: PropTypes.string,
+        runtime: PropTypes.number,
+        genres: PropTypes.arrayOf(PropTypes.shape({ name : PropTypes.string})),
+        overview: PropTypes.string,
+    }).isRequired
 }
 
 export default memo(WishlistItem);
